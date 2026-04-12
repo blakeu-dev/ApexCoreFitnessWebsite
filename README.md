@@ -21,3 +21,4 @@ Use the navigation at the top of each page to explore the site:
 All pages linked together for easy navigation
 
 ##Deployment Link
+https://blakeu-dev.github.io/ApexCoreFitnessWebsite/
