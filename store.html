@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
 	<title>Apex Core Fitness</title>
-	<meta charset="utf-8">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
+	<script src="https://www.paypal.com/sdk/js?client-id=AYhlzghrAry1iKDrwAtSU9NKBmVFk0m-0chzpoZTswtB3b9fEffcKwKdAi8IPVwYzou4Qffc5Rtrp9Q5&currency=USD"></script>
 </head>
 
 <body>
+
+
 
 <div id="wrapper">
 
 <!--Header and Site Title-->
 <header>
 	<img class = "headerlogo" src="logo.png" alt="Apex Core Fitness Logo">
-	<h1>Apex Core Fitness</h1>
+	<h1>Apex Core Store</h1>
 </header>
 
 <!--Navigation Menu-->
@@ -61,31 +64,32 @@
 </div>
 
 <h2 id = "section">Products</h2>
-<form method="post" action="https://webdevbasics.net/scripts/demo.php" class ="orderform">
-	<fieldset>
-		<legend>Customer Information</legend>
-	<label for="myName">Name:</label>
-	<input type="text" name="myName" id="myName" required>
-	<label for="myEmail">E-mail:</label>
-	<input type="email" name="myEmail" id="myEmail" required>
-	<label for="phone">Phone number:</label>
-	<input type="tel" name="phone" id="phone">
-</fieldset>
 
-<fieldset>
-	<legend>Order Details</legend>
-	<label for="product">Choose a Product:</label>
-	<select id="product" name="product" required>
-		<option value="">Select an item</option>
-		<option value="tshirt">Apex Core T-Shirt</option>
-		<option value="shakerbottle">Apex Core Shaker Bottle</option>
-		<option value="wriststraps">Apex Core Wrist Straps</option>
-	</select>
-</fieldset>
+<div class="product-layout">
+	<div class="item">
+		<img src="shirt.jpg" alt="Apex Core Fitness T-Shirt">
+		<h3>Apex Core T-Shirt</h3>
+		<p>Comfortable and made with 100% cotton.</p>
+		<p>$19.99</p>
+		<div id="paypal-button-tshirt"></div>
+	</div>
 
-<input type="submit" value="Submit">
+	<div class="item">
+		<img src="shaker.avif" alt="Apex Core Fitness Shaker Bottle">
+		<h3>Apex Core Shaker Bottle</h3>
+		<p>Perfect for mixing proteins and other supplements. Can hold up to 28oz.</p>
+		<p>$6.99</p>
+		<div id="paypal-button-shaker"></div>
+	</div>
 
-</form>
+	<div class="item">
+		<img src="wristwraps.jpg" alt="Apex Core Wrist Wraps">
+		<h3>Apex Core Wrist Wraps</h3>
+		<p>Durable, increases wrist stability, and creates more muscle isolation.</p>
+		<p>$15.99</p>
+		<div id="paypal-button-wraps"></div>
+	</div>
+</div>
 
 <!--Address/Contact Section-->
 	<div class = "contact">12000 Garrett Bay Road<br>Ellison Bay, WI 54210<br>888-555-5555</div>
@@ -97,5 +101,41 @@
 </footer>
 
 </div>
+
+<script>
+	paypal.Buttons({
+	  createOrder: function(data, actions) {
+		return actions.order.create({
+		  purchase_units: [{
+			description: "Apex Core T-Shirt",
+			amount: { value: "19.99" }
+		  }]
+		});
+	  }
+	}).render("#paypal-button-tshirt");
+  
+	paypal.Buttons({
+	  createOrder: function(data, actions) {
+		return actions.order.create({
+		  purchase_units: [{
+			description: "Apex Core Shaker Bottle",
+			amount: { value: "6.99" }
+		  }]
+		});
+	  }
+	}).render("#paypal-button-shaker");
+  
+	paypal.Buttons({
+	  createOrder: function(data, actions) {
+		return actions.order.create({
+		  purchase_units: [{
+			description: "Apex Core Wrist Wraps",
+			amount: { value: "15.99" }
+		  }]
+		});
+	  }
+	}).render("#paypal-button-wraps");
+  </script>
+
 </body>
 </html>
