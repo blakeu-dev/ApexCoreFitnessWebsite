@@ -332,36 +332,6 @@ input, textarea { margin-bottom: .5em; }
 	background-color: #B8860B;
 }
 
-.gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-	gap: 1em;
-	margin-top: 1.5em;
-	color: #8C3826
-}
-
-.gallery img {
-	width: 100%;
-	height: 175px;
-	border-radius: 8px;
-
-}
-
-.gallery figure {
-	margin: 0;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.gallery figcaption{
-	margin-top: .5em;
-	margin-bottom: 1em;;
-	font-weight: bold;
-	border-bottom: 3px solid #8C3826;
-}
-
 
 @media (max-width: 900px) {
 	.halfcontainer {
