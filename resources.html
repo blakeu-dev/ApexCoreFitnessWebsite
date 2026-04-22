@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Apex Core Fitness</title>
+	<title>Resources | Apex Core Fitness</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -61,7 +61,7 @@
 </div>
 
 <h2 id = "section">Fitness Goals</h2>
-<form method="post" action="https://webdevbasics.net/scripts/demo.php" class ="orderform">
+<form method="post" action="https://webdevbasics.net/scripts/demo.php" class ="orderform" onsubmit=" return confirmSubmit()">
 	<fieldset>
 		<legend>Customer Information</legend>
 	<label for="myName">Name:</label>
@@ -97,5 +97,11 @@
 </footer>
 
 </div>
+
+<script>
+	function confirmSubmit() {
+		return confirm("This is the start of your fitness journey! Are you ready to take the first step?");
+	}
+</script>
 </body>
 </html>
